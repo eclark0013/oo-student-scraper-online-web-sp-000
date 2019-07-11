@@ -17,6 +17,10 @@ class Scraper
     end
 
     students
+<<<<<<< HEAD
+=======
+    binding.pry
+>>>>>>> 384efea9b0d285d757e0b842319ada4dcfd544fb
     # both name and location doc.css("div.card-text-container").first.text
     # name only: doc.css("h4").first.text
     # location only: doc.css("p").first.text
@@ -28,6 +32,7 @@ class Scraper
     doc = Nokogiri::HTML(File.read(profile_url))
     info = {}
 
+<<<<<<< HEAD
 
     available_info = {}
     doc.css("div.social-icon-container a").each do |object|
@@ -49,6 +54,28 @@ class Scraper
     available_info
 
 
+=======
+    def make_hash(twitter_value:, linkedin_value:, github_value:, blog_value:, profile_quote_value:, bio_value:)
+      info[:twitter] = twitter_value
+      info[:linkedin] = linkedin_value
+      info[:github] = github_value
+      info[:blog] = blog_value
+      info[:profile_quote] = profile_quote_value
+      info[:bio] = bio_value
+      info
+    end
+
+    available_info = {
+      :twitter_value => 1,
+      :linkedin_value => 2,
+      :github_value => 3,
+      :blog_value => 4,
+      :profile_quote_value => 5,
+      :bio_value => 6
+    }
+
+    make_hash(available_info)
+>>>>>>> 384efea9b0d285d757e0b842319ada4dcfd544fb
   end
 
 end
